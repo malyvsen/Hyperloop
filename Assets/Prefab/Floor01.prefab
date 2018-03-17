@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4369020345821712}
   - component: {fileID: 65134200429961394}
   m_Layer: 0
-  m_Name: Colaider
+  m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4705210543283368}
   m_Layer: 0
-  m_Name: Floor
+  m_Name: Floor01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
