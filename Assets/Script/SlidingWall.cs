@@ -4,27 +4,31 @@ using UnityEngine;
 
 public class SlidingWall : Usable
 {
-    [HideInInspector]
-    public Transform target;
     public Transform startMarker;
     public Transform endMarker;
 
-    public float moveSpeed = 2f;
+    [HideInInspector]
+    public Vector3 target;
+    private Vector3 startPos;
+    private Vector3 endPos;
+
+    public float moveSpeed = 5f;
 
 
     private void Start()
     {
-        target = startMarker;
+        target = startPos = startMarker.position;
+        endPos = endMarker.position;
     }
 
 
     private void Update()
     {
-        Vector3 deltaPos = target.position - transform.position;
+        Vector3 deltaPos = target - transform.position;
         float moveThisFrame = moveSpeed * Time.deltaTime;
-        if (moveThisFrame < deltaPos.magnitude)
+        if (moveThisFrame >= deltaPos.magnitude)
         {
-            transform.position = target.position;
+            transform.position = target;
             return;
         }
 
@@ -34,6 +38,6 @@ public class SlidingWall : Usable
 
     public override void Use()
     {
-        target = (target == endMarker) ? startMarker : endMarker;
+        target = (target == endPos) ? startPos : endPos;
     }
 }
