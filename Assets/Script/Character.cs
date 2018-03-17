@@ -93,10 +93,17 @@ public class Character : MonoBehaviour
                     goingLeft = false;
                     break;
                 case Action.Type.useObject:
-                    // TODO
+                    Usable usable = Usable.AtPosition(transform.position);
+                    if (usable != null)
+                    {
+                        usable.Use();
+                    }
                     break;
             }
-            rigidbody.velocity = new Vector3(velocityHorizontal, rigidbody.velocity.y, 0f);
+            currentAction.executed = true;
         }
+
+
+        rigidbody.velocity = new Vector3(velocityHorizontal, rigidbody.velocity.y, 0f);
     }
 }

@@ -42,6 +42,6 @@ public class Timeline
 
     public void AddCurrentAction(Action.Type type)
     {
-        actions.Insert(0, new Action() { time = Time.time, type = type, executed = false });
+        actions.Add(new Action() { time = Time.time, type = type, executed = false });
     }
 }
