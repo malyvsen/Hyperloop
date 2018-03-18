@@ -8,11 +8,22 @@ using UnityEngine;
 public class Lever : MonoBehaviour
 {
     public GameObject reachable, unreachable;
+    private Animator reachableAnimator, unreachableAnimator;
+    const string stateAnimBool = "State";
+
+
     public float radius = 0.5f;
     public List<Usable> usables = new List<Usable>();
 
 
     public static List<Lever> levers = new List<Lever>();
+
+
+    private void Awake()
+    {
+        reachableAnimator = reachable.GetComponent<Animator>();
+        unreachableAnimator = unreachable.GetComponent<Animator>();
+    }
 
 
     private void OnEnable()
@@ -29,7 +40,6 @@ public class Lever : MonoBehaviour
 
     private void Update()
     {
-        bool isReachable = ReachableFromPosition(Character.playerVessel.transform.position);
         reachable.SetActive(isReachable);
         unreachable.SetActive(!isReachable);
     }
@@ -37,9 +47,20 @@ public class Lever : MonoBehaviour
 
     public void Use()
     {
-        foreach(Usable usable in usables)
+        reachableAnimator.SetBool(stateAnimBool, !reachableAnimator.GetBool(stateAnimBool));
+        unreachableAnimator.SetBool(stateAnimBool, !unreachableAnimator.GetBool(stateAnimBool));
+        foreach (Usable usable in usables)
         {
             usable.Use();
+        }
+    }
+
+
+    public bool isReachable
+    {
+        get
+        {
+            return ReachableFromPosition(Character.playerVessel.transform.position);
         }
     }
 
