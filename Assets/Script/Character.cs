@@ -132,7 +132,7 @@ public class Character : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                TimeManager.instance.Rewind();
+                Game.instance.Rewind();
             }
 
             Action.Type actionMaybe = Action.fromInput;

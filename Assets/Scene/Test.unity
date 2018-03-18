@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 17490870}
   - component: {fileID: 17490869}
   m_Layer: 0
-  m_Name: TimeManager
+  m_Name: Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c214946ee9e9b9640806cb26af946f8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1392800889}
+  originalPlayer: {fileID: 1392800889}
   loopStart: 0
 --- !u!4 &17490870
 Transform:
@@ -202,6 +202,53 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c38e11ceb8ec9a41acd77216f84b248, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &566631109
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2095679677}
+    m_Modifications:
+    - target: {fileID: 4733828330264322, guid: c902e911d943c404dba48d7190dea802, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733828330264322, guid: c902e911d943c404dba48d7190dea802, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733828330264322, guid: c902e911d943c404dba48d7190dea802, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733828330264322, guid: c902e911d943c404dba48d7190dea802, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733828330264322, guid: c902e911d943c404dba48d7190dea802, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733828330264322, guid: c902e911d943c404dba48d7190dea802, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733828330264322, guid: c902e911d943c404dba48d7190dea802, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4733828330264322, guid: c902e911d943c404dba48d7190dea802, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c902e911d943c404dba48d7190dea802, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &637453387 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4733828330264322, guid: c902e911d943c404dba48d7190dea802,
+    type: 2}
+  m_PrefabInternal: {fileID: 566631109}
 --- !u!114 &769241427 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114420750759476516, guid: 3c38e11ceb8ec9a41acd77216f84b248,
@@ -552,6 +599,35 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60febf0c731245e4db2498b0991c35fb, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &2095679676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2095679677}
+  m_Layer: 0
+  m_Name: Crystals
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2095679677
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2095679676}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 637453387}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2102717446
 GameObject:
   m_ObjectHideFlags: 0

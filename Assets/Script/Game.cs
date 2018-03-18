@@ -1,0 +1,64 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+
+
+public class Game : MonoBehaviour
+{
+    public static Game instance;
+
+    public GameObject originalPlayer;
+    public float loopStart = 0f;
+
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+
+    private void Update()
+    {
+        if (Crystal.allPickedUp)
+        {
+            // we won!
+            int currentIndex = SceneManager.GetActiveScene().buildIndex;
+            if (currentIndex >= 0)
+            {
+                if (currentIndex + 1 < SceneManager.sceneCount)
+                {
+                    // there is a scene to be loaded
+                    SceneManager.LoadScene(currentIndex + 1);
+                }
+                else
+                {
+                    Debug.Log("Win, but no more scenes to load");
+                }
+            }
+            else
+            {
+                Debug.Log("Win, but scene not placed in build settings");
+            }
+        }
+    }
+
+
+    public void Rewind()
+    {
+        loopStart = Time.time;
+
+        foreach (Usable usable in Usable.usables)
+        {
+            usable.Rewind();
+        }
+
+        foreach (Character character in Character.characters)
+        {
+            character.Rewind();
+        }
+
+        Instantiate(originalPlayer);
+    }
+}
