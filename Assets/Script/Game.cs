@@ -11,6 +11,7 @@ public class Game : MonoBehaviour
 
     public GameObject originalPlayer;
     public float loopStart = 0f;
+    public int currentLoop = 0;
 
 
     private void Awake()
@@ -47,6 +48,7 @@ public class Game : MonoBehaviour
 
     public void Rewind()
     {
+        currentLoop++;
         loopStart = Time.time;
 
         foreach (Usable usable in Usable.usables)
@@ -60,5 +62,7 @@ public class Game : MonoBehaviour
         }
 
         Instantiate(originalPlayer);
+
+        Music.instance.Rewind();
     }
 }
