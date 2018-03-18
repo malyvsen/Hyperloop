@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 4226441998117372}
   - component: {fileID: 95496642119735038}
   m_Layer: 0
-  m_Name: LeverRechyblre
+  m_Name: LeverReachablre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 4472359466411656}
   - component: {fileID: 95263497187074980}
   m_Layer: 0
-  m_Name: LeverUnrechyble
+  m_Name: LeverUnreachable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,7 +401,7 @@ Animator:
   m_GameObject: {fileID: 1744532760199846}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 58c57522e7ee4074d93f4e451d4a60c4, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbcce4f723c8cc64db1ba8b924d7d33c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -418,7 +418,7 @@ Animator:
   m_GameObject: {fileID: 1593452678193940}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 58c57522e7ee4074d93f4e451d4a60c4, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbcce4f723c8cc64db1ba8b924d7d33c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
