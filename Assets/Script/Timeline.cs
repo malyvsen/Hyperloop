@@ -21,7 +21,7 @@ public class Timeline
             }
 
             Action candidate = unexecutedActions.First();
-            if (Time.time - TimeManager.instance.loopStart >= candidate.time)
+            if (Time.time - Game.instance.loopStart >= candidate.time)
             {
                 return candidate;
             }
@@ -42,7 +42,7 @@ public class Timeline
 
     public void AddCurrentAction(Action.Type type)
     {
-        actions.Add(new Action() { time = Time.time - TimeManager.instance.loopStart, type = type, executed = false });
+        actions.Add(new Action() { time = Time.time - Game.instance.loopStart, type = type, executed = false });
     }
 
 

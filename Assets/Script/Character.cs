@@ -130,11 +130,6 @@ public class Character : MonoBehaviour
     {
         if (isPlayerVessel)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                TimeManager.instance.Rewind();
-            }
-
             Action.Type actionMaybe = Action.fromInput;
             if (actionMaybe != Action.Type.none)
             {
