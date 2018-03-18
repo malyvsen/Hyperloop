@@ -1488,6 +1488,7 @@ GameObject:
   - component: {fileID: 20915396750087174}
   - component: {fileID: 124714529833612898}
   - component: {fileID: 81984255470120794}
+  - component: {fileID: 114218144954057590}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3465,7 +3466,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &65037987991546856
@@ -3674,6 +3675,20 @@ MonoBehaviour:
   player: {fileID: 1550540640923338}
   clone: {fileID: 1412803416893208}
   moveSpeed: 5
+--- !u!114 &114218144954057590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1840750182371146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60db39ae11ef64d479ea96d984f41841, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  originalTarget: {fileID: 1560457812922426}
+  followSpeed: 4
+  lookSpeed: 2
 --- !u!114 &114680696964890216
 MonoBehaviour:
   m_ObjectHideFlags: 1
