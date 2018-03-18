@@ -366,7 +366,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4766193392456236}
-  - component: {fileID: 136746555958887606}
+  - component: {fileID: 65680416581995012}
   m_Layer: 8
   m_Name: Collider
   m_TagString: Untagged
@@ -3280,6 +3280,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!65 &65680416581995012
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1199696984344220}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95458016253465448
 Animator:
   serializedVersion: 3
@@ -3330,19 +3342,6 @@ MonoBehaviour:
   player: {fileID: 1288474816486526}
   clone: {fileID: 1439944994578786}
   moveSpeed: 5
---- !u!136 &136746555958887606
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1199696984344220}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137415064046632530
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
