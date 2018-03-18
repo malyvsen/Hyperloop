@@ -37,11 +37,6 @@ public class Character : MonoBehaviour
         }
     }
 
-    [HideInInspector]
-    public Timeline timeline = new Timeline();
-
-    public GameObject player, clone;
-    
     public bool isPlayerVessel
     {
         get
@@ -61,6 +56,24 @@ public class Character : MonoBehaviour
             throw new System.NotSupportedException("Setting isPlayerVessel to false");
         }
     }
+
+
+    [HideInInspector]
+    public Timeline timeline = new Timeline();
+
+
+    public GameObject player, clone;
+    private Animator playerAnimator, cloneAnimator;
+    const string walkAnimBool = "Walk";
+
+    public Animator animator
+    {
+        get
+        {
+            return isPlayerVessel ? playerAnimator : cloneAnimator;
+        }
+    }
+
 
     public float moveSpeed = 5f;
 
@@ -110,6 +123,9 @@ public class Character : MonoBehaviour
         startPos = transform.position;
         rigidbody = GetComponent<Rigidbody>();
         Physics.IgnoreLayerCollision(gameObject.layer, gameObject.layer);
+
+        playerAnimator = player.GetComponent<Animator>();
+        cloneAnimator = clone.GetComponent<Animator>();
     }
 
 
@@ -144,18 +160,22 @@ public class Character : MonoBehaviour
             {
                 case Action.Type.moveRight:
                     transform.forward = Vector3.right;
+                    animator.SetBool(walkAnimBool, true);
                     goingRight = true;
                     rightPrecedes = true;
                     break;
                 case Action.Type.stopRight:
+                    animator.SetBool(walkAnimBool, false);
                     goingRight = false;
                     break;
                 case Action.Type.moveLeft:
                     transform.forward = Vector3.left;
+                    animator.SetBool(walkAnimBool, true);
                     goingLeft = true;
                     rightPrecedes = false;
                     break;
                 case Action.Type.stopLeft:
+                    animator.SetBool(walkAnimBool, false);
                     goingLeft = false;
                     break;
                 case Action.Type.useObject:
