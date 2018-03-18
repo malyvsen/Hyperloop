@@ -9,6 +9,7 @@ public class Lever : MonoBehaviour
 {
     public GameObject reachable, unreachable;
     private Animator reachableAnimator, unreachableAnimator;
+    private SkinnedMeshRenderer reachableRenderer, unreachableRenderer;
     const string stateAnimBool = "State";
 
 
@@ -23,6 +24,9 @@ public class Lever : MonoBehaviour
     {
         reachableAnimator = reachable.GetComponent<Animator>();
         unreachableAnimator = unreachable.GetComponent<Animator>();
+
+        reachableRenderer = reachable.GetComponentInChildren<SkinnedMeshRenderer>();
+        unreachableRenderer = unreachable.GetComponentInChildren<SkinnedMeshRenderer>();
     }
 
 
@@ -40,8 +44,8 @@ public class Lever : MonoBehaviour
 
     private void Update()
     {
-        reachable.SetActive(isReachable);
-        unreachable.SetActive(!isReachable);
+        reachableRenderer.enabled = isReachable;
+        unreachableRenderer.enabled = !isReachable;
     }
 
 
