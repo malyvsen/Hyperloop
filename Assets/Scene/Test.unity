@@ -202,6 +202,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c38e11ceb8ec9a41acd77216f84b248, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &769241427 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114420750759476516, guid: 3c38e11ceb8ec9a41acd77216f84b248,
+    type: 2}
+  m_PrefabInternal: {fileID: 159171700}
+  m_Script: {fileID: 11500000, guid: 2d0b321cd7358714f82cf261557a49b5, type: 3}
 --- !u!1001 &1006596659
 Prefab:
   m_ObjectHideFlags: 0
@@ -241,6 +247,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114889512977146876, guid: 12cd7c8626900914eae14e51039e1deb,
+        type: 2}
+      propertyPath: usables.Array.data[0]
+      value: 
+      objectReference: {fileID: 769241427}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 12cd7c8626900914eae14e51039e1deb, type: 2}
   m_IsPrefabParent: 0
@@ -550,7 +561,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2102717447}
   m_Layer: 0
-  m_Name: Static
+  m_Name: LevelElements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

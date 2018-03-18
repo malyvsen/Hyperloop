@@ -8,9 +8,60 @@ public class Character : MonoBehaviour
 {
     public static List<Character> characters = new List<Character>();
 
+    private static Character _playerVessel;
+    public static Character playerVessel
+    {
+        get
+        {
+            return _playerVessel;
+        }
+
+        set
+        {
+            if (value == _playerVessel)
+            {
+                return;
+            }
+
+            if (_playerVessel != null)
+            {
+                _playerVessel.player.SetActive(false);
+                _playerVessel.clone.SetActive(true);
+            }
+
+            _playerVessel = value;
+
+            _playerVessel.player.SetActive(true);
+            _playerVessel.clone.SetActive(false);
+            _playerVessel.timeline = new Timeline();
+        }
+    }
+
     [HideInInspector]
     public Timeline timeline = new Timeline();
-    public bool captureKeys = false;
+
+    public GameObject player, clone;
+    
+    public bool isPlayerVessel
+    {
+        get
+        {
+            return this == playerVessel;
+        }
+
+
+        set
+        {
+            if (value)
+            {
+                playerVessel = this;
+                return;
+            }
+
+            throw new System.NotSupportedException("Setting isPlayerVessel to false");
+        }
+    }
+
     public float moveSpeed = 5f;
 
     private bool goingRight = false;
@@ -56,20 +107,32 @@ public class Character : MonoBehaviour
 
     private void Awake()
     {
-        characters.Add(this);
         startPos = transform.position;
         rigidbody = GetComponent<Rigidbody>();
         Physics.IgnoreLayerCollision(gameObject.layer, gameObject.layer);
     }
 
 
+    private void OnEnable()
+    {
+        characters.Add(this);
+        isPlayerVessel = true;
+    }
+
+
+    private void OnDisable()
+    {
+        characters.Remove(this);
+    }
+
+
     private void Update()
     {
-        if (captureKeys)
+        if (isPlayerVessel)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                TimeManager.instance.ResetEverything();
+                TimeManager.instance.Rewind();
             }
 
             Action.Type actionMaybe = Action.fromInput;
@@ -99,11 +162,7 @@ public class Character : MonoBehaviour
                     goingLeft = false;
                     break;
                 case Action.Type.useObject:
-                    Usable usable = Usable.AtPosition(transform.position);
-                    if (usable != null)
-                    {
-                        usable.Use();
-                    }
+                    Lever.UseFromPosition(transform.position);
                     break;
             }
             currentAction.executed = true;
@@ -114,10 +173,9 @@ public class Character : MonoBehaviour
     }
 
 
-    public void ResetTime()
+    public void Rewind()
     {
         transform.position = startPos;
-        captureKeys = false;
-        timeline.Reset();
+        timeline.Rewind();
     }
 }

@@ -46,7 +46,7 @@ public class Timeline
     }
 
 
-    public void Reset()
+    public void Rewind()
     {
         foreach (Action action in actions)
         {

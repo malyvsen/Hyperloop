@@ -18,23 +18,21 @@ public class TimeManager : MonoBehaviour
     }
 
 
-    public void ResetEverything()
+    public void Rewind()
     {
         loopStart = Time.time;
 
         foreach (Usable usable in Usable.usables)
         {
-            usable.ResetTime();
+            usable.Rewind();
         }
 
         foreach (Character character in Character.characters)
         {
-            character.ResetTime();
+            character.Rewind();
         }
 
         GameObject newPlayer = Instantiate(player);
         Character newCharacter = newPlayer.GetComponent<Character>();
-        newCharacter.captureKeys = true;
-        newCharacter.timeline = new Timeline();
     }
 }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class SlidingWall : Usable
 {
     public Transform endMarker;
@@ -41,7 +43,7 @@ public class SlidingWall : Usable
     }
 
 
-    public override void ResetTime()
+    public override void Rewind()
     {
         target = transform.position = startPos;
     }
