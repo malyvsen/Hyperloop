@@ -52,9 +52,12 @@ public class Crystal : MonoBehaviour
 
     private void Update()
     {
-        if (ReachableFromPosition(Character.playerVessel.transform.position))
+        foreach (Character character in Character.characters)
         {
-            pickedUp = true;
+            if (ReachableFromPosition(character.transform.position))
+            {
+                pickedUp = true;
+            }
         }
     }
 
