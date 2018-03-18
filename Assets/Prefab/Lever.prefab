@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 4226441998117372}
   - component: {fileID: 95496642119735038}
   m_Layer: 0
-  m_Name: LeverReachablre
+  m_Name: LeverReachable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
