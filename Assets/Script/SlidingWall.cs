@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SlidingWall : Usable
 {
-    public Transform startMarker;
     public Transform endMarker;
 
     [HideInInspector]
@@ -17,7 +16,7 @@ public class SlidingWall : Usable
 
     private void Start()
     {
-        target = startPos = startMarker.position;
+        target = startPos = transform.position;
         endPos = endMarker.position;
     }
 
@@ -39,5 +38,11 @@ public class SlidingWall : Usable
     public override void Use()
     {
         target = (target == endPos) ? startPos : endPos;
+    }
+
+
+    public override void ResetTime()
+    {
+        target = transform.position = startPos;
     }
 }

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    public static List<Character> characters = new List<Character>();
+
     [HideInInspector]
     public Timeline timeline = new Timeline();
     public bool captureKeys = false;
@@ -49,11 +51,15 @@ public class Character : MonoBehaviour
 
 
     private new Rigidbody rigidbody;
+    private Vector3 startPos;
 
 
     private void Awake()
     {
+        characters.Add(this);
+        startPos = transform.position;
         rigidbody = GetComponent<Rigidbody>();
+        Physics.IgnoreLayerCollision(gameObject.layer, gameObject.layer);
     }
 
 
@@ -63,7 +69,7 @@ public class Character : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-
+                TimeManager.instance.ResetEverything();
             }
 
             Action.Type actionMaybe = Action.fromInput;
@@ -105,5 +111,13 @@ public class Character : MonoBehaviour
 
 
         rigidbody.velocity = new Vector3(velocityHorizontal, rigidbody.velocity.y, 0f);
+    }
+
+
+    public void ResetTime()
+    {
+        transform.position = startPos;
+        captureKeys = false;
+        timeline.Reset();
     }
 }

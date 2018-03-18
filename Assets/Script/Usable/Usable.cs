@@ -14,6 +14,12 @@ public class Usable : MonoBehaviour
     }
 
 
+    public virtual void ResetTime()
+    {
+        throw new System.NotImplementedException("Base usable reset");
+    }
+
+
     public static List<Usable> usables = new List<Usable>();
 
     private void Awake()
