@@ -148,6 +148,7 @@ public class Character : MonoBehaviour
             switch (currentAction.type)
             {
                 case Action.Type.moveRight:
+                    transform.forward = Vector3.right;
                     goingRight = true;
                     rightPrecedes = true;
                     break;
@@ -155,6 +156,7 @@ public class Character : MonoBehaviour
                     goingRight = false;
                     break;
                 case Action.Type.moveLeft:
+                    transform.forward = Vector3.left;
                     goingLeft = true;
                     rightPrecedes = false;
                     break;
