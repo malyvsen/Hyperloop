@@ -42,6 +42,27 @@ public class Game : MonoBehaviour
             {
                 Debug.Log("Win, but scene not placed in build settings");
             }
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Rewind();
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            int currentIndex = SceneManager.GetActiveScene().buildIndex;
+            if (currentIndex >= 0)
+            {
+                SceneManager.LoadScene(currentIndex);
+            }
+            else
+            {
+                Debug.Log("Please add the scene to build settings before trying to reset");
+            }
+            return;
         }
     }
 
