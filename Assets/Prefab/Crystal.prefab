@@ -513,7 +513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a5093865991264eb3656c81aa48ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.5
+  radius: 1
   model: {fileID: 1993404278885880}
 --- !u!137 &137160914287010414
 SkinnedMeshRenderer:
