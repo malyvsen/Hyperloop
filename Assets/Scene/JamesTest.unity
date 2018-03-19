@@ -1198,7 +1198,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 304302256}
   m_LocalRotation: {x: -0.085292734, y: -0, z: -0, w: 0.99635595}
-  m_LocalPosition: {x: 0.04, y: -0.08553004, z: 0.17853084}
+  m_LocalPosition: {x: 0.008, y: 0.053, z: -0.004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1406808465}
@@ -2179,6 +2179,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114889512977146876, guid: 12cd7c8626900914eae14e51039e1deb,
+        type: 2}
+      propertyPath: usables.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4892357753369576, guid: 12cd7c8626900914eae14e51039e1deb, type: 2}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -2214,6 +2219,11 @@ Prefab:
     - target: {fileID: 114889512977146876, guid: 12cd7c8626900914eae14e51039e1deb,
         type: 2}
       propertyPath: usables.Array.data[0]
+      value: 
+      objectReference: {fileID: 1686190754}
+    - target: {fileID: 114889512977146876, guid: 12cd7c8626900914eae14e51039e1deb,
+        type: 2}
+      propertyPath: usables.Array.data[1]
       value: 
       objectReference: {fileID: 1686190754}
     m_RemovedComponents: []
@@ -4019,13 +4029,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1537566346}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.32669014, y: -0.33902562, z: 0.3489785, w: 0.8102772}
   m_LocalPosition: {x: -1.29, y: 10.57, z: 2.25}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0154592, y: 1.0154593, z: 1.0154593}
   m_Children: []
   m_Father: {fileID: 716656874}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 50.000004, y: -30.000002, z: 32.358}
 --- !u!108 &1537566348
 Light:
   m_ObjectHideFlags: 0
@@ -4036,7 +4046,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 0.84991354, g: 0.9632353, b: 0.91165435, a: 1}
+  m_Color: {r: 1, g: 0.92089254, b: 0.71323526, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
